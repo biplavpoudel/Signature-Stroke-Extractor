@@ -24,6 +24,8 @@ class SignatureExtractor:
 
         # Apply the mask to the original image
         result = cv2.bitwise_and(gray, signature_mask)
+        cv2.imshow("Signature Mask", result)
+        cv2.waitKey(0)
 
         pil_image = Image.fromarray(result)
         signature = extract_signature(pil_image)
@@ -32,7 +34,7 @@ class SignatureExtractor:
 
 
 if __name__ == '__main__':
-    path = 'Signature.jpg'
+    path = 'images/Signature.jpg'
     extract = SignatureExtractor(path)
     extract.extract()
 

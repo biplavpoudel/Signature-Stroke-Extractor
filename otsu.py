@@ -47,7 +47,7 @@ class Otsu:
         return threshold
 
 if __name__ == '__main__':
-    img = cv2.imread('test.jpg')
+    img = cv2.imread('images/test.jpg')
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     otsu = Otsu()
     threshold = otsu.thresholding(img)
